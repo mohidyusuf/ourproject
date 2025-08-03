@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental", "CarRental.csproj", "{8FFC7BCF-D619-46ED-ADBB-6F1CAAD6EF66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "..\Entities\Entities.csproj", "{5D2F83E3-5A7B-4FF5-9AD1-B0A556E6B386}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal", "..\Dal\Dal.csproj", "{164D806C-D737-4C7E-B7CB-A21EAC209888}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FFC7BCF-D619-46ED-ADBB-6F1CAAD6EF66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FFC7BCF-D619-46ED-ADBB-6F1CAAD6EF66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FFC7BCF-D619-46ED-ADBB-6F1CAAD6EF66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FFC7BCF-D619-46ED-ADBB-6F1CAAD6EF66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D2F83E3-5A7B-4FF5-9AD1-B0A556E6B386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D2F83E3-5A7B-4FF5-9AD1-B0A556E6B386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D2F83E3-5A7B-4FF5-9AD1-B0A556E6B386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D2F83E3-5A7B-4FF5-9AD1-B0A556E6B386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{164D806C-D737-4C7E-B7CB-A21EAC209888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{164D806C-D737-4C7E-B7CB-A21EAC209888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{164D806C-D737-4C7E-B7CB-A21EAC209888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{164D806C-D737-4C7E-B7CB-A21EAC209888}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2487DE5B-21EC-4BD7-950D-08BE501F54EE}
+	EndGlobalSection
+EndGlobal
