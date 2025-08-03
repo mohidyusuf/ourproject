@@ -1,0 +1,129 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CarRental
+build_property.RootNamespace = CarRental
+build_property.ProjectDir = C:\Users\Salaar Rao\Desktop\Car Rental - Copy\CarRental\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Salaar Rao\Desktop\Car Rental - Copy\CarRental
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/Components/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/Components/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/blazor2/blazor2.Web/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxibGF6b3IyXGJsYXpvcjIuV2ViXENvbXBvbmVudHNcQXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/blazor2/blazor2.Web/Components/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxibGF6b3IyXGJsYXpvcjIuV2ViXENvbXBvbmVudHNcUGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/blazor2/blazor2.Web/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxibGF6b3IyXGJsYXpvcjIuV2ViXENvbXBvbmVudHNcUGFnZXNcRXJyb3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/blazor2/blazor2.Web/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxibGF6b3IyXGJsYXpvcjIuV2ViXENvbXBvbmVudHNcUGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/blazor2/blazor2.Web/Components/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxibGF6b3IyXGJsYXpvcjIuV2ViXENvbXBvbmVudHNcUGFnZXNcV2VhdGhlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/blazor2/blazor2.Web/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxibGF6b3IyXGJsYXpvcjIuV2ViXENvbXBvbmVudHNcUm91dGVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/blazor2/blazor2.Web/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxibGF6b3IyXGJsYXpvcjIuV2ViXENvbXBvbmVudHNcX0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/BlazorApp1/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxCbGF6b3JBcHAxXENvbXBvbmVudHNcQXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/BlazorApp1/Components/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxCbGF6b3JBcHAxXENvbXBvbmVudHNcUGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/BlazorApp1/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxCbGF6b3JBcHAxXENvbXBvbmVudHNcUGFnZXNcRXJyb3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/BlazorApp1/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxCbGF6b3JBcHAxXENvbXBvbmVudHNcUGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/BlazorApp1/Components/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxCbGF6b3JBcHAxXENvbXBvbmVudHNcUGFnZXNcV2VhdGhlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/BlazorApp1/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxCbGF6b3JBcHAxXENvbXBvbmVudHNcUm91dGVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/BlazorApp1/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxCbGF6b3JBcHAxXENvbXBvbmVudHNcX0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-6vrjrk681f
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-c9zwnx3nu7
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/blazor2/blazor2.Web/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxibGF6b3IyXGJsYXpvcjIuV2ViXENvbXBvbmVudHNcTGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-amcrm1ww1e
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/blazor2/blazor2.Web/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxibGF6b3IyXGJsYXpvcjIuV2ViXENvbXBvbmVudHNcTGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-vc5hiiu102
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/BlazorApp1/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxCbGF6b3JBcHAxXENvbXBvbmVudHNcTGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-n4i949oxul
+
+[C:/Users/Salaar Rao/Desktop/Car Rental - Copy/CarRental/ourproject/BlazorApp1/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = b3VycHJvamVjdFxCbGF6b3JBcHAxXENvbXBvbmVudHNcTGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-lz8zmtqngg
