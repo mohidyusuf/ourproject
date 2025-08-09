@@ -1,0 +1,77 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@using Entities
+@using CarRentalApp.Services
+@inject IRegistrationService RegistrationService
+
+<h3>User Registration</h3>
+
+<EditForm Model="@newRegistration" OnValidSubmit="@AddRegistration">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <InputText @bind-Value="newRegistration.FirstName" placeholder="First Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <InputText @bind-Value="newRegistration.LastName" placeholder="Last Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <InputText @bind-Value="newRegistration.Email" placeholder="Email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <InputText type="password" @bind-Value="newRegistration.Password" placeholder="Password" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <InputText @bind-Value="newRegistration.PhoneNumber" placeholder="Phone Number" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</EditForm>
+
+@if (registrations.Any())
+{
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Registered On</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reg in registrations)
+            {
+                <tr>
+                    <td>@reg.FirstName @reg.LastName</td>
+                    <td>@reg.Email</td>
+                    <td>@reg.PhoneNumber</td>
+                    <td>@reg.CreatedAt.ToString("dd-MMM-yyyy")</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<EntRegistration> registrations = new();
+    private EntRegistration newRegistration = new();
+
+
+
+    private async Task AddRegistration()
+    {
+        await RegistrationService.CreateAsync(newRegistration);
+        newRegistration = new EntRegistration();
+
+    }
+
+
+}

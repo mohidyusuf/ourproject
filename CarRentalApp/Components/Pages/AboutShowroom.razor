@@ -1,0 +1,205 @@
+﻿@page "/about-showroom"
+@rendermode InteractiveServer
+
+@using CarRentalApp.Services
+@inject IBranchService BranchService
+@inject IAboutShowroomService AboutService
+@inject IRegistrationService RegistrationService
+@inject IContactShowroomService ContactService
+@inject IShowroomAddressService ShowroomAddressService
+@inject ISocialReferencesService SocialReferenceService
+@inject IShowroomProfileService ShowroomProfileService
+@inject CarRentalApp.Services.IAboutShowroomService AboutShowroomService
+
+
+
+
+<h3 class="text-2xl font-bold mb-4">Create or Edit Showroom</h3>
+
+<EditForm Model="showroom" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <!-- Basic Info -->
+    <div class="mb-3">
+        <label>Showroom Name</label>
+        <input type="text" class="form-control" @bind="showroom.ShowroomName" />
+    </div>
+
+    <div class="mb-3">
+        <label>Owner Name</label>
+        <input type="text" class="form-control" @bind="showroom.OwnerName" />
+    </div>
+
+    <div class="mb-3">
+        <label>Description</label>
+        <input type="text" class="form-control" @bind="showroom.Description" />
+    </div>
+
+    <div class="mb-3">
+        <label>Opening Hours</label>
+        <input type="text" class="form-control" @bind="showroom.OpeningHours" />
+    </div>
+
+    <!-- Address -->
+    <h5>Addresses</h5>
+    @foreach (var address in showroom.Addresses)
+    {
+        <div class="border p-3 mb-2">
+            <input type="text" class="form-control mb-2" placeholder="Country" @bind="address.Country" />
+            <input type="text" class="form-control mb-2" placeholder="City" @bind="address.City" />
+            <input type="text" class="form-control mb-2" placeholder="Street" @bind="address.Address" />
+        </div>
+    }
+    <button type="button" class="btn btn-sm btn-secondary mb-3" @onclick="AddAddress">Add Address</button>
+
+    <!-- Contact Info -->
+    <h5>Contact Information</h5>
+    @foreach (var contact in showroom.ContactShowroom)
+    {
+        <div class="border p-3 mb-2">
+            <input type="text" class="form-control mb-2" placeholder="Phone" @bind="contact.ContactPhone" />
+            <input type="text" class="form-control mb-2" placeholder="Email" @bind="contact.ContactEmail" />
+        </div>
+    }
+    <button type="button" class="btn btn-sm btn-secondary mb-3" @onclick="AddContact">Add Contact</button>
+
+    <!-- Branches -->
+    <h5>Branches</h5>
+    @foreach (var branch in showroom.Branches)
+    {
+        <div class="border p-3 mb-2">
+            <input type="text" class="form-control mb-2" placeholder="Branch Name" @bind="branch.BranchName" />
+            <input type="text" class="form-control mb-2" placeholder="Location" @bind="branch.BranchLocations" />
+        </div>
+    }
+    <button type="button" class="btn btn-sm btn-secondary mb-3" @onclick="AddBranch">Add Branch</button>
+
+    <!-- Profile -->
+    <h5>Showroom Profile</h5>
+    <div class="mb-3">
+        <label>Logo Image URL</label>
+        <input type="text" class="form-control" @bind="showroom.ShowroomProfile.LogoImagePath" />
+    </div>
+    <div class="mb-3">
+        <label>Cover Image URL</label>
+        <input type="text" class="form-control" @bind="showroom.ShowroomProfile.CoverImagePath" />
+    </div>
+
+    <!-- Social Media -->
+    <h5>Social Media References</h5>
+    @foreach (var reference in showroom.ShowroomReferences)
+    {
+        <div class="border p-3 mb-2">
+            <input type="text" class="form-control mb-2" placeholder="Facebook URL" @bind="reference.FacebookUrl" />
+            <input type="text" class="form-control mb-2" placeholder="Website URL" @bind="reference.WebsiteUrl" />
+        </div>
+    }
+    <button type="button" class="btn btn-sm btn-secondary mb-3" @onclick="AddSocialReference">Add Social Reference</button>
+
+    <!-- Save/Update Button -->
+    <button type="submit" class="btn btn-primary mt-3">
+        @(string.IsNullOrEmpty(showroom.Id) ? "Save Showroom" : "Update Showroom")
+    </button>
+
+    @if (isSaved)
+    {
+        <p class="text-success mt-3">Showroom @(string.IsNullOrEmpty(showroom.Id) ? "saved" : "updated") successfully!</p>
+    }
+</EditForm>
+
+<!-- All Showrooms Display -->
+@if (allShowrooms.Any())
+{
+    <h4 class="mt-5">Saved Showrooms</h4>
+    @foreach (var sr in allShowrooms)
+    {
+        <div class="border p-3 mt-2">
+            <h5>@sr.ShowroomName</h5>
+            <p>@sr.Description</p>
+            <p><b>Owner:</b> @sr.OwnerName</p>
+            <p><b>Opening Hours:</b> @sr.OpeningHours</p>
+
+            @if (sr.Addresses.Any())
+            {
+                <p><b>Addresses:</b></p>
+                <ul>
+                    @foreach (var addr in sr.Addresses)
+                    {
+                        <li>@addr.Country, @addr.City, @addr.Address</li>
+                    }
+                </ul>
+            }
+
+            @if (sr.ContactShowroom.Any())
+            {
+                <p><b>Contacts:</b></p>
+                <ul>
+                    @foreach (var c in sr.ContactShowroom)
+                    {
+                        <li>@c.ContactPhone - @c.ContactEmail</li>
+                    }
+                </ul>
+            }
+
+            <button class="btn btn-sm btn-warning me-2" @onclick="() => LoadForEdit(sr)">Edit</button>
+            <button class="btn btn-sm btn-danger" @onclick="() => DeleteShowroom(sr.Id)">Delete</button>
+        </div>
+    }
+}
+
+
+
+
+@code {
+    private EntAboutShowroom showroom = new();
+    private bool isSaved = false;
+    private List<EntAboutShowroom> allShowrooms = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAllShowrooms();
+    }
+
+    private async Task LoadAllShowrooms()
+    {
+        allShowrooms = await AboutShowroomService.GetAllShowrooms();
+    }
+
+    private void LoadForEdit(EntAboutShowroom selected)
+    {
+        showroom = selected;
+        isSaved = false;
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        if (string.IsNullOrEmpty(showroom.Id))
+        {
+            await AboutShowroomService.CreateAboutShowroom(showroom);
+        }
+        else
+        {
+            await AboutShowroomService.UpdateShowroom(showroom);
+        }
+
+        isSaved = true;
+        showroom = new();
+        await LoadAllShowrooms();
+    }
+
+    private async Task DeleteShowroom(string? id)
+    {
+        if (!string.IsNullOrEmpty(id))
+        {
+            await AboutShowroomService.DeleteShowroom(id);
+            await LoadAllShowrooms();
+        }
+    }
+
+    private void AddAddress() => showroom.Addresses.Add(new());
+    private void AddContact() => showroom.ContactShowroom.Add(new());
+    private void AddBranch() => showroom.Branches.Add(new());
+    private void AddSocialReference() => showroom.ShowroomReferences.Add(new());
+}
+

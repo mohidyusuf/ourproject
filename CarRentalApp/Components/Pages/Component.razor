@@ -1,0 +1,79 @@
+
+@rendermode InteractiveServer
+@using System.ComponentModel.DataAnnotations
+
+<h3>Branch Info</h3>
+
+<div class="mb-3">
+    <label>Number of Branches (Max 10)</label>
+    <input type="number" class="form-control" min="0" max="10"
+           @bind="NumberOfBranches"
+           @oninput="UpdateBranchInputs" />
+</div>
+
+@if (NumberOfBranches > 0)
+{
+    @for (int i = 0; i < DynamicBranches.Count; i++)
+    {
+        <div class="border p-3 mb-3 rounded shadow-sm">
+            <h6>Branch @(i + 1)</h6>
+
+            <label>Location</label>
+            <input class="form-control mb-2" placeholder="Enter Branch Location"
+                   @onblur="() => HandleLocationChange(i)" />
+
+            <label>Email</label>
+            <input class="form-control mb-2" type="email" placeholder="Enter Branch Email"
+                   @bind="DynamicBranches[i].Email" />
+
+            <label>Phone</label>
+            <input class="form-control mb-2" type="text" placeholder="Enter Branch Phone"
+                   @bind="DynamicBranches[i].Phone" />
+        </div>
+    }
+}
+
+@if (showLimitMessage)
+{
+    <div class="text-danger">Maximum of 10 branches allowed.</div>
+}
+
+@code {
+    private int NumberOfBranches { get; set; } = 0;
+    private List<BranchInfo> DynamicBranches { get; set; } = new();
+    private bool showLimitMessage = false;
+
+    private void UpdateBranchInputs(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out int count))
+        {
+            if (count > 10)
+            {
+                count = 10;
+                showLimitMessage = true;
+            }
+            else
+            {
+                showLimitMessage = false;
+            }
+
+            NumberOfBranches = count;
+            DynamicBranches = new List<BranchInfo>();
+
+            for (int i = 0; i < NumberOfBranches; i++)
+            {
+                DynamicBranches.Add(new BranchInfo());
+            }
+        }
+    }
+    public void HandleLocationChange(int i)
+    {
+        
+    }
+    public class BranchInfo
+    {
+        public string? Location { get; set; }
+        public string? Email { get; set; }
+        public string? Phone { get; set; }
+    }
+}

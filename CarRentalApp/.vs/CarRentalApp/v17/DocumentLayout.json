@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CarRentalApp\\CarRentalApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A61612DD-D51A-4408-904B-E5CC703E270D}|CarRentalApp.csproj|d:\\carrentalapp\\carrentalapp\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A61612DD-D51A-4408-904B-E5CC703E270D}|CarRentalApp.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A61612DD-D51A-4408-904B-E5CC703E270D}|CarRentalApp.csproj|d:\\carrentalapp\\carrentalapp\\services\\aboutshowroomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A61612DD-D51A-4408-904B-E5CC703E270D}|CarRentalApp.csproj|solutionrelative:services\\aboutshowroomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Home.razor",
+              "DocumentMoniker": "D:\\CarRentalApp\\CarRentalApp\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
+              "ToolTip": "D:\\CarRentalApp\\CarRentalApp\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-08T09:42:45.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AboutShowroomService.cs",
+              "DocumentMoniker": "D:\\CarRentalApp\\CarRentalApp\\Services\\AboutShowroomService.cs",
+              "RelativeDocumentMoniker": "Services\\AboutShowroomService.cs",
+              "ToolTip": "D:\\CarRentalApp\\CarRentalApp\\Services\\AboutShowroomService.cs",
+              "RelativeToolTip": "Services\\AboutShowroomService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T21:16:54.442Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

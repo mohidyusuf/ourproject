@@ -1,0 +1,123 @@
+@rendermode InteractiveServer
+@using Entities
+
+<h3>Select Your Location</h3>
+
+<div class="mb-2">
+    <label>Country</label>
+    <input class="form-control" value="Pakistan" disabled />
+</div>
+
+<div class="mb-2">
+    <label>Province</label>
+    <select class="form-control" @bind="SelectedProvinceId">
+        <option value="">-- Select Province --</option>
+        @foreach (var province in Provinces)
+        {
+            <option value="@province.Id">@province.Name</option>
+        }
+    </select>
+</div>
+
+@if (SelectedProvinceId > 0)
+{
+    <div class="mb-2">
+        <label>City</label>
+        <select class="form-control" @bind="SelectedCityId">
+            <option value="">-- Select City --</option>
+            @foreach (var city in FilteredCities)
+            {
+                <option value="@city.Id">@city.Name</option>
+            }
+        </select>
+    </div>
+}
+
+@if (SelectedCityId > 0)
+{
+    <div class="mb-2">
+        <label>Area</label>
+        <select class="form-control" @bind="selectedAreaId">
+            <option value="">-- Select Area --</option>
+            @foreach (var area in FilteredAreas)
+            {
+                <option value="@area.Id">@area.Name</option>
+            }
+        </select>
+    </div>
+}
+
+@if (selectedAreaId > 0)
+{
+    <div class="mt-4 alert alert-success">
+        <strong>You selected:</strong><br />
+        Country: Pakistan<br />
+        Province: @Provinces.FirstOrDefault(p => p.Id == SelectedProvinceId)?.Name<br />
+        City: @Cities.FirstOrDefault(c => c.Id == SelectedCityId)?.Name<br />
+        Area: @Areas.FirstOrDefault(a => a.Id == selectedAreaId)?.Name
+    </div>
+}
+
+@code {
+    private List<EntProvince> Provinces = new();
+    private List<EntCity> Cities = new();
+    private List<EntArea> Areas = new();
+
+    private int _selectedProvinceId;
+    private int SelectedProvinceId
+    {
+        get => _selectedProvinceId;
+        set
+        {
+            _selectedProvinceId = value;
+            selectedCityId = 0;
+            selectedAreaId = 0;
+        }
+    }
+
+    private int selectedCityId;
+    private int SelectedCityId
+    {
+        get => selectedCityId;
+        set
+        {
+            selectedCityId = value;
+            selectedAreaId = 0;
+        }
+    }
+
+    private int selectedAreaId;
+
+    private List<EntCity> FilteredCities => Cities.Where(c => c.ProvinceId == SelectedProvinceId).ToList();
+    private List<EntArea> FilteredAreas => Areas.Where(a => a.CityId == SelectedCityId).ToList();
+
+    protected override void OnInitialized()
+    {
+        Provinces = new List<EntProvince>
+        {
+            new() { Id = 1, Name = "Punjab" },
+            new() { Id = 2, Name = "Sindh" }
+        };
+
+        Cities = new List<EntCity>
+        {
+            new() { Id = 101, Name = "Lahore", ProvinceId = 1 },
+            new() { Id = 102, Name = "Multan", ProvinceId = 1 },
+            new() { Id = 201, Name = "Karachi", ProvinceId = 2 },
+            new() { Id = 202, Name = "Hyderabad", ProvinceId = 2 }
+        };
+
+        Areas = new List<EntArea>
+        {
+            new() { Id = 1001, Name = "DHA", CityId = 101 },
+            new() { Id = 1002, Name = "Johar Town", CityId = 101 },
+            new() { Id = 1003, Name = "Model Town", CityId = 101 },
+            new() { Id = 1101, Name = "Cantt", CityId = 102 },
+            new() { Id = 1102, Name = "Shah Rukn-e-Alam", CityId = 102 },
+            new() { Id = 2001, Name = "Gulshan-e-Iqbal", CityId = 201 },
+            new() { Id = 2002, Name = "DHA Karachi", CityId = 201 },
+            new() { Id = 2101, Name = "Latifabad", CityId = 202 },
+            new() { Id = 2102, Name = "Qasimabad", CityId = 202 }
+        };
+    }
+}

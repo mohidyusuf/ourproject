@@ -1,0 +1,95 @@
+@rendermode InteractiveServer
+<h3>Cascading</h3>
+
+<select class="form-select" @onchange="OnSelectChangeHnadeler">
+	<option value="0" selected>--please select--</option>
+	@foreach (var c in countries)
+	{
+		<option value="@c.Province">@c.Province</option>
+	}
+</select>
+
+@if (IsActve)
+{
+	<select class="form-select">
+		<option value="0" selected>--please select--</option>
+		@foreach (var c in SelectedCities)
+		{
+			<option value="@c.CityNameName">@c.CityNameName</option>
+		}
+	</select>
+}
+
+@code {
+	bool IsActve = false;
+
+	public class Country
+	{
+
+		public string Province { get; set; }
+	}
+	List<Country> countries = new List<Country>()
+	{
+		new Country{Province="Punjab"},
+		new Country{Province="Sindh"},
+		new Country{Province="Balochistan"},
+		new Country{Province="Gilgit Baltistan"},
+		new Country{Province="Khyber Pakhtunkhwa"}
+	};
+
+
+	public class City
+	{
+
+		public string? Province { get; set; }
+		public string? CityNameName { get; set; }
+	}
+	List<City> cities = new List<City>()
+	{
+		
+		//Khyber Pakhtunkhwa Cities
+		new City{Province="Khyber Pakhtunkhwa",CityNameName="Peshawar"},
+		new City{Province="Khyber Pakhtunkhwa",CityNameName="Mardan"},
+		new City{Province="Khyber Pakhtunkhwa",CityNameName="Mingaora"},
+		new City{Province="Khyber Pakhtunkhwa",CityNameName="Kohat"},
+		//Balochistan Cities
+		new City{Province="Balochistan",CityNameName="Quetta"},
+		new City{Province="Balochistan",CityNameName="Gwadar"},
+		new City{Province="Balochistan",CityNameName="Khuzdar"},
+		//Gilgit Baltistan Cities
+		new City{Province="Gilgit Baltistan",CityNameName="Gilgit"},
+		new City{Province="Gilgit Baltistan",CityNameName="Skardu"},
+		new City{Province="Gilgit Baltistan",CityNameName="Hunza"},
+		//Punjab Cities
+		new City{Province="Punjab",CityNameName="Faisalabad"},
+		new City{Province="Punjab",CityNameName="Multan"},
+		new City{Province="Punjab",CityNameName="Rawalpindi"},
+		new City{Province="Punjab",CityNameName="Gujranwala"},
+		//Sindh Cities
+		new City{Province="Sindh",CityNameName="Hyderabad"},
+		new City{Province="Sindh",CityNameName="Sukkur"},
+		new City{Province="Sindh",CityNameName="Larkana"},
+		new City{Province="Sindh",CityNameName="Mirpur Khas"},
+		new City{Province="Sindh",CityNameName="Nawabshah"},
+		new City{Province="Sindh",CityNameName="Karachi"}
+		
+	};
+	List<City> SelectedCities = new List<City>();
+
+	string SelectCountry { get; set; }
+	private void OnSelectChangeHnadeler(ChangeEventArgs e)
+	{
+		SelectCountry = e.Value.ToString();
+		if (SelectCountry != "0")
+		{
+			SelectedCities = cities.Where(x => x.Province == SelectCountry).ToList();
+			IsActve = true;
+		}
+		else
+		{
+			IsActve = false;
+		}
+	}
+
+
+}

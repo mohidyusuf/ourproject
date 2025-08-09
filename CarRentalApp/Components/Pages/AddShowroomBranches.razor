@@ -1,0 +1,43 @@
+﻿@rendermode InteractiveServer
+
+<div class="d-flex justify-content-between">
+    <div class="flex-fill me2">
+
+        <input @bind="BranchModel.Location" type="text" class="form-control" placeholder="Enter Location" />
+    </div>
+    <div class="flex-fill me2">
+        <input @bind="BranchModel.Phone" type="number" class="form-control" placeholder="Enter Contact Number" />
+    </div>
+    <div class="flex-fill me2">
+
+        <input @bind="BranchModel.Email" type="email" class="form-control" placeholder="Enter Email" />
+    </div>
+</div>
+<div>
+    <button @onclick="CreateBranch" class="btn btn-primary">Add Branch</button>
+</div>
+@foreach (var item in Branches)
+{
+    <div>
+        @item.Location
+    </div>
+}
+
+
+@code {
+    public class BranchInfo
+    {
+        public string? Location { get; set; }
+        public string? Email { get; set; }
+        public string? Phone { get; set; }
+    }
+    private List<BranchInfo> Branches = new();
+    private BranchInfo BranchModel = new();
+    public void CreateBranch()
+    {
+        Branches.Add(BranchModel);
+        BranchModel = new();
+    }
+
+
+}
